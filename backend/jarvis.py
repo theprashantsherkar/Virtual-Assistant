@@ -24,7 +24,7 @@ engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 
 
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[0].id)
 
 
 def speak(audio):
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         elif 'who is' in query:
             speak('searching in wikipedia....')
             query = query.replace("what is", "")
-            result = wikipedia.summary(query, sentences=3)
+            result = wikipedia.summary(query, sentences=2)
             print("According to wikipedia...", result)
             speak("According to wikipedia...")
             speak(result)
